@@ -66,15 +66,6 @@ export default function WaitlistForm() {
         <h3 className="text-white font-semibold text-lg leading-tight">
           {isSuccess ? "You're in." : "Already secured."}
         </h3>
-        {isSuccess ? (
-          <p className="text-emerald-400 text-sm mt-1 font-medium">
-            You&apos;re founding member #{position}
-          </p>
-        ) : (
-          <p className="text-emerald-400 text-sm mt-1 font-medium">
-            Your spot is already reserved.
-          </p>
-        )}
         <p className="text-slate-500 text-xs mt-3 leading-relaxed">
           Check your inbox — we&apos;ll reach out before beta opens.
         </p>
