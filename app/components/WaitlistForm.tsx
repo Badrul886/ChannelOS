@@ -5,7 +5,7 @@ import { useUTM } from "@/app/components/UTMCapture";
 
 type Status = "idle" | "loading" | "success" | "already" | "error";
 
-export default function WaitlistForm() {
+export default function WaitlistForm({ customButtonText }: { customButtonText?: string }) {
   const [hasMounted, setHasMounted] = useState(false);
   const { utm_source, utm_medium, utm_campaign } = useUTM();
   const [email, setEmail] = useState("");
@@ -84,15 +84,15 @@ export default function WaitlistForm() {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           disabled={status === "loading"}
-          className="w-full bg-white/[0.04] border border-white/[0.08] text-[#F1F5F9] placeholder-[#475569] rounded-[10px] px-4 py-3.5 text-sm focus:outline-none focus:border-[#3B82F6] focus:ring-[3px] focus:ring-[#3B82F6]/15 transition-all duration-200"
+          className="w-full bg-white/[0.04] border border-white/[0.08] text-[#FFFFFF] placeholder-[#717171] rounded-[10px] px-4 py-3.5 text-sm focus:outline-none focus:border-[#FF0000] focus:ring-[3px] focus:ring-[#FF0000]/15 transition-all duration-200"
         />
 
         <button
           type="submit"
           disabled={status === "loading" || !email}
-          className="w-full bg-[#3B82F6] hover:bg-[#2563EB] disabled:opacity-70 disabled:cursor-not-allowed text-white font-semibold text-sm py-3.5 rounded-[10px] transition-all duration-200 hover:shadow-[0_8px_30px_rgba(59,130,246,0.3)] flex items-center justify-center gap-2"
+          className="w-full bg-[#FF0000] hover:bg-[#CC0000] disabled:opacity-70 disabled:cursor-not-allowed text-white font-semibold text-sm py-3.5 rounded-[10px] transition-all duration-200 hover:shadow-[0_8px_30px_rgba(255,0,0,0.3)] flex items-center justify-center gap-2"
         >
-          {status === "loading" ? "Securing your spot..." : "Reserve My Founding Spot →"}
+          {status === "loading" ? "Securing your spot..." : (customButtonText || "Reserve My Founding Spot →")}
         </button>
 
         {status === "error" && (

@@ -3,22 +3,22 @@
 @theme {
   --font-inter: var(--font-inter);
 
-  --color-background: #080B11;
-  --color-surface: #0F1319;
-  --color-surface-elevated: #161B23;
+  --color-background: #0F0F0F;
+  --color-surface: #1E1E1E;
+  --color-surface-elevated: #282828;
   --color-border-subtle: rgba(255,255,255,0.06);
   --color-border-active: rgba(255,255,255,0.12);
-  --color-text-primary: #F1F5F9;
-  --color-text-secondary: #94A3B8;
-  --color-text-muted: #475569;
-  --color-accent: #3B82F6;
-  --color-accent-dim: rgba(59,130,246,0.1);
+  --color-text-primary: #FFFFFF;
+  --color-text-secondary: #AAAAAA;
+  --color-text-muted: #717171;
+  --color-accent: #FF0000;
+  --color-accent-dim: rgba(255,0,0,0.1);
 }
 
 @layer base {
   :root {
-    --background: #080B11;
-    --foreground: #F1F5F9;
+    --background: #0F0F0F;
+    --foreground: #FFFFFF;
   }
 
   body {
@@ -33,21 +33,21 @@
 
   h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
-    color: #F1F5F9;
+    color: #FFFFFF;
     letter-spacing: -0.02em;
   }
 }
 
 @layer utilities {
-  .text-gradient-blue {
-    background: linear-gradient(to right, #3B82F6, #93C5FD);
+  .text-gradient-red {
+    background: linear-gradient(to right, #FF0000, #FF4D4D);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
-  .bg-hero-glow-blue {
-    background: radial-gradient(circle at center, rgba(59,130,246,0.12) 0%, transparent 100%);
+  .bg-hero-glow-red {
+    background: radial-gradient(circle at center, rgba(255,0,0,0.08) 0%, transparent 100%);
   }
 
   .tabular-nums {

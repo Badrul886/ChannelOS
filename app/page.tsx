@@ -10,11 +10,11 @@ function FAQItem({ q, a, isOpen, onClick }: { q: string, a: string, isOpen: bool
         onClick={onClick}
         className="w-full py-6 flex items-center justify-between text-left group transition-all"
       >
-        <h4 className={`text-sm font-bold tracking-tight transition-colors ${isOpen ? 'text-blue-400' : 'text-white'}`}>
+        <h4 className={`text-sm font-bold tracking-tight transition-colors ${isOpen ? 'text-red-500' : 'text-white'}`}>
           {q}
         </h4>
-        <div className={`w-5 h-5 rounded-full border border-white/10 flex items-center justify-center transition-transform duration-300 ${isOpen ? 'rotate-45 border-blue-500/30 bg-blue-500/10' : ''}`}>
-          <span className={`text-xs ${isOpen ? 'text-blue-400' : 'text-slate-600'}`}>+</span>
+        <div className={`w-5 h-5 rounded-full border border-white/10 flex items-center justify-center transition-transform duration-300 ${isOpen ? 'rotate-45 border-red-500/30 bg-red-500/10' : ''}`}>
+          <span className={`text-xs ${isOpen ? 'text-red-500' : 'text-slate-600'}`}>+</span>
         </div>
       </button>
       <div 
@@ -37,21 +37,21 @@ export default function LandingPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#080B11] text-[#94A3B8] selection:bg-blue-500/30 antialiased font-inter overflow-x-hidden">
+    <div className="min-h-screen bg-[#0F0F0F] text-[#AAAAAA] selection:bg-red-500/30 antialiased font-inter overflow-x-hidden">
       {/* NAV */}
-      <nav className="fixed top-0 left-0 right-0 h-[56px] bg-[#080B11]/85 backdrop-blur-md border-b border-white/5 z-50">
+      <nav className="fixed top-0 left-0 right-0 h-[56px] bg-[#0F0F0F]/85 backdrop-blur-md border-b border-white/5 z-50">
         <div className="max-w-5xl mx-auto px-6 h-full flex items-center justify-between">
           <div className="flex items-center">
-            <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-[#3B82F6] to-[#1D4ED8] flex items-center justify-center shadow-lg shadow-blue-500/20">
+            <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-[#FF0000] to-[#CC0000] flex items-center justify-center shadow-lg shadow-red-500/20">
               <span className="text-white font-bold text-sm tracking-tighter">C</span>
             </div>
             <span className="text-white font-semibold text-sm ml-2.5 tracking-tight">ChannelOS</span>
           </div>
           <button 
             onClick={scrollToCTA}
-            className="bg-blue-600 hover:bg-blue-500 text-white text-xs font-semibold px-4 py-2 rounded-full transition-colors active:scale-95"
+            className="bg-red-600 hover:bg-red-500 text-white text-xs font-semibold px-4 py-2 rounded-full transition-colors active:scale-95"
           >
-            Get Early Access
+            Manage My Channels →
           </button>
         </div>
       </nav>
@@ -60,62 +60,94 @@ export default function LandingPage() {
         {/* SECTION A — HERO */}
         <section className="relative min-h-[calc(100vh-56px)] mt-[56px] flex flex-col items-center justify-center px-6 overflow-hidden">
           {/* Decorative Elements */}
-          <div className="absolute top-[10%] left-1/2 -translate-x-1/2 w-[500px] h-[500px] rounded-full bg-radial-gradient from-blue-500/12 to-transparent opacity-100 filter blur-[80px] pointer-events-none z-0" 
-               style={{ background: 'radial-gradient(circle, rgba(59,130,246,0.12) 0%, transparent 70%)' }} />
+          <div className="absolute top-[10%] left-1/2 -translate-x-1/2 w-[500px] h-[500px] rounded-full bg-radial-gradient from-red-600/10 to-transparent opacity-100 filter blur-[80px] pointer-events-none z-0" 
+               style={{ background: 'radial-gradient(circle, rgba(255,0,0,0.08) 0%, transparent 70%)' }} />
           
           <div className="max-w-4xl mx-auto text-center relative z-10 py-20">
-            <div className="inline-flex items-center gap-2 border border-blue-500/25 bg-blue-500/8 rounded-full px-4 py-1.5 mb-8 animate-in fade-in slide-in-from-bottom-4 duration-700">
-              <span className="relative flex h-1.5 w-1.5">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-blue-400"></span>
-              </span>
-              <span className="text-blue-400 text-xs font-medium tracking-tight">
-                Waitlist open · 200 founding member spots
+            {/* Status Badge */}
+            <div className="inline-flex items-center gap-2 border border-red-600/25 bg-red-600/8 rounded-full px-4 py-1.5 mb-8 animate-in fade-in slide-in-from-bottom-4 duration-700">
+              <span className="text-red-500 text-xs font-medium tracking-tight">
+                Built for operators running 3+ YouTube channels
               </span>
             </div>
             
-            <h1 className="text-[clamp(40px,6vw,72px)] font-extrabold text-[#F1F5F9] tracking-[-0.03em] leading-[1.05] mb-4 animate-in fade-in slide-in-from-bottom-6 duration-1000">
-              Your YouTube portfolio, <br />
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#3B82F6] to-[#93C5FD]">
-                one command center
+            <h1 className="text-[clamp(40px,6vw,72px)] font-extrabold text-[#FFFFFF] tracking-[-0.03em] leading-[1.05] mb-4 animate-in fade-in slide-in-from-bottom-6 duration-1000">
+              One dashboard for all <br />
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#FF0000] to-[#FF4D4D]">
+                your YouTube channels.
               </span>
-              <span className="text-blue-500 animate-pulse ml-1 font-light">|</span>
             </h1>
             
-            <p className="max-w-lg mx-auto text-base md:text-lg text-slate-400 leading-relaxed mt-6 mb-10 animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-200">
-              Stop logging into six tabs to figure out which channel needs you today. ChannelOS watches all your channels, finds what&apos;s broken, and tells you exactly what to make next.
+            <p className="max-w-xl mx-auto text-base md:text-lg text-slate-400 leading-relaxed mt-6 mb-10 animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-200">
+              Stop opening six YouTube Studio tabs to figure out which channel needs you today. 
+              ChannelOS shows every channel&apos;s views, subs, revenue, and watch time in one place — then 
+              tells you exactly which video to make next.
             </p>
             
             <div className="max-w-sm mx-auto mb-14 animate-in fade-in slide-in-from-bottom-10 duration-1000 delay-300">
               <Suspense fallback={<div className="h-[120px] w-full bg-white/[0.04] border border-white/[0.08] rounded-[10px] animate-pulse" />}>
-                <WaitlistForm />
+                <WaitlistForm customButtonText="Get Early Access to ChannelOS →" />
               </Suspense>
+            </div>
+            
+            {/* Social Numbers Row */}
+            <div className="flex items-center justify-center gap-8 flex-wrap mt-14 pt-8 border-t border-white/5 animate-in fade-in duration-1000 delay-500">
+              {[
+                { val: "3+", label: "channels connected per operator" },
+                { val: "$0", label: "to join the waitlist" },
+                { val: "5 min", label: "to see your full portfolio" }
+              ].map((stat, i) => (
+                <div key={i} className="flex items-center gap-8 group">
+                  <div className="flex flex-col items-center">
+                    <span className="text-2xl font-bold text-white tabular-nums tracking-tight">{stat.val}</span>
+                    <span className="text-[10px] text-slate-600 mt-1 uppercase tracking-wider font-bold max-w-[140px] leading-tight">{stat.label}</span>
+                  </div>
+                  {i < 2 && <div className="hidden md:block w-[1px] h-8 bg-white/5" />}
+                </div>
+              ))}
             </div>
           </div>
         </section>
 
+        {/* METRICS BAR */}
+        <div className="border-y border-white/[0.06] bg-white/[0.02] py-5">
+          <div className="max-w-5xl mx-auto px-6 flex items-center justify-between flex-wrap gap-4">
+            <div className="text-slate-600 text-xs font-medium uppercase tracking-widest text-center md:text-left">
+              What ChannelOS tracks across all your channels
+            </div>
+            <div className="flex items-center justify-center md:justify-end gap-6 flex-wrap">
+              {["Views", "Subscribers", "Watch Time", "Revenue / RPM", "CTR", "Top Videos"].map((metric, i) => (
+                <div key={i} className="flex items-center gap-2 text-slate-400 text-xs font-medium">
+                  <div className="w-1.5 h-1.5 rounded-sm bg-red-600" />
+                  {metric}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
         {/* SECTION B — THE BEFORE STATE */}
-        <section className="bg-[#0F1319] border-y border-white/5 px-6 py-[100px]">
+        <section className="bg-[#1E1E1E] border-b border-white/5 px-6 py-[100px]">
           <div className="max-w-5xl mx-auto">
             <div className="max-w-3xl mx-auto text-center mb-16">
-              <div className="text-xs font-semibold tracking-widest uppercase text-blue-500 mb-4">
-                If you run multiple channels, you know this.
+              <div className="text-xs font-semibold tracking-widest uppercase text-red-500 mb-4">
+                The reality of running multiple YouTube channels
               </div>
               <h2 className="text-3xl md:text-4xl font-bold text-white leading-tight">
-                You built a YouTube business. <br className="hidden md:block" />
-                Your tools still think you have one channel.
+                YouTube Studio was built for one channel. <br className="hidden md:block" />
+                You&apos;re running a portfolio.
               </h2>
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {[
-                { e: "🗂️", t: "Your tracking spreadsheet made sense when you had two channels. Now it has seventeen tabs, three broken formulas, and you stopped updating it six weeks ago." },
-                { e: "📊", t: "You open YouTube Studio, check one channel, open another tab for the next one, and by the time you've checked all five you've forgotten what you saw in the first." },
-                { e: "🎯", t: "You know one of your channels is underperforming. You just don't know which one — or why — without spending forty minutes manually comparing numbers." },
-                { e: "💸", t: "You can't answer the simplest question: how much did all your channels make last month — combined. You have to open four dashboards and do math in your head." }
+                { e: "🗂️", t: "Your tracking spreadsheet made sense when you had two channels. Now you have five niches, seventeen tabs, three broken formulas, and you stopped updating it six weeks ago." },
+                { e: "📊", t: "You open YouTube Studio for Channel 1, check the views, open a new tab for Channel 2, check those views, open another tab for Channel 3 — and by the time you've gone through all of them you've forgotten what you saw in the first one." },
+                { e: "🎯", t: "One of your channels is bleeding subscribers this month. You just don't know which one — or whether it's the thumbnails, the niche, the upload frequency, or the algorithm — without spending forty minutes pulling numbers manually." },
+                { e: "💸", t: "Someone asks what your channels made last month. You have to open YouTube Studio, switch accounts four times, find the revenue tab on each one, and do math in your head. There is no combined number anywhere." }
               ].map((card, i) => (
-                <div key={i} className="bg-[#080B11] border border-white/[0.06] rounded-2xl p-7 text-left hover:border-white/[0.12] transition-all duration-300 group">
-                  <div className="w-[38px] h-[38px] rounded-xl bg-white/[0.04] flex items-center justify-center text-xl mb-5 group-hover:bg-blue-500/10 transition-colors">
+                <div key={i} className="bg-[#0F0F0F] border border-white/[0.06] rounded-2xl p-7 text-left hover:border-white/[0.12] transition-all duration-300 group">
+                  <div className="w-[38px] h-[38px] rounded-xl bg-white/[0.04] flex items-center justify-center text-xl mb-5 group-hover:bg-red-500/10 transition-colors">
                     {card.e}
                   </div>
                   <p className="text-slate-300 text-sm leading-relaxed font-medium">
@@ -123,12 +155,12 @@ export default function LandingPage() {
                   </p>
                 </div>
               ))}
-              <div className="md:col-span-2 bg-[#080B11] border border-white/[0.06] rounded-2xl p-7 text-left hover:border-white/[0.12] transition-all duration-300 group">
-                <div className="w-[38px] h-[38px] rounded-xl bg-white/[0.04] flex items-center justify-center text-xl mb-5 group-hover:bg-blue-500/10 transition-colors">
+              <div className="md:col-span-2 bg-[#0F0F0F] border border-white/[0.06] rounded-2xl p-7 text-left hover:border-white/[0.12] transition-all duration-300 group">
+                <div className="w-[38px] h-[38px] rounded-xl bg-white/[0.04] flex items-center justify-center text-xl mb-5 group-hover:bg-red-500/10 transition-colors">
                   🔁
                 </div>
                 <p className="text-slate-300 text-sm leading-relaxed font-medium">
-                  Every Monday you open six tabs, look at six different dashboards, absorb six different sets of numbers, and still finish the session not knowing which channel to focus on or what to make next. So you just make what you feel like.
+                  Every Monday you open six YouTube Studio tabs, stare at six different graphs, try to remember which channel was up last week, give up, and just make a video for whichever channel feels right. That is not a strategy.
                 </p>
               </div>
             </div>
@@ -136,10 +168,10 @@ export default function LandingPage() {
         </section>
 
         {/* SECTION C — PRODUCT EXPLANATION */}
-        <section className="bg-[#080B11] px-6 py-[100px]">
+        <section className="bg-[#0F0F0F] px-6 py-[100px]">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-16">
-              <div className="text-xs font-semibold tracking-widest uppercase text-blue-500 mb-4">How it works</div>
+              <div className="text-xs font-semibold tracking-widest uppercase text-red-500 mb-4">How it works</div>
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Three things. That&apos;s it.</h2>
               <p className="text-slate-400 text-base max-w-xl mx-auto">
                 No 47-feature onboarding. No week-long setup. Connect your channels, see your portfolio, act on what matters.
@@ -150,17 +182,17 @@ export default function LandingPage() {
               {/* Step 1 */}
               <div className="flex flex-col md:flex-row items-center gap-12">
                 <div className="flex-1">
-                  <div className="text-xs font-mono text-blue-500/60 font-medium mb-3">01</div>
+                  <div className="text-xs font-mono text-red-500/60 font-medium mb-3">01</div>
                   <h3 className="text-xl font-bold text-white mb-3 tracking-tight">Connect every channel in 60 seconds.</h3>
                   <p className="text-slate-400 text-sm leading-relaxed">
-                    Link all your YouTube channels through Google OAuth. No passwords stored. No CSV uploads. No manual data entry. We pull everything directly from YouTube&apos;s API — subscribers, views, revenue, watch time — for every channel simultaneously.
+                    Connect every YouTube channel you run through one Google OAuth login. No passwords stored. ChannelOS pulls views, subscribers, watch time, revenue, and CTR from YouTube&apos;s official API — for every channel, all at once.
                   </p>
                 </div>
-                <div className="flex-1 w-full bg-[#0F1319] border border-white/[0.06] rounded-2xl p-5 aspect-[4/3] flex flex-col justify-center overflow-hidden shadow-2xl">
+                <div className="flex-1 w-full bg-[#1E1E1E] border border-white/[0.06] rounded-2xl p-5 aspect-[4/3] flex flex-col justify-center overflow-hidden shadow-2xl">
                   <div className="space-y-1">
                     {[
-                      { n: "Finance Decoded", s: "247K subscribers", c: "bg-blue-500" },
-                      { n: "Stoic Daily", s: "182K subscribers", c: "bg-violet-500" },
+                      { n: "Finance Decoded", s: "247K subscribers", c: "bg-red-500" },
+                      { n: "Stoic Daily", s: "182K subscribers", c: "bg-red-500" },
                       { n: "History Vault", s: "94K subscribers", c: "bg-emerald-500" },
                       { n: "Tech Simplified", s: "410K subscribers", c: "bg-orange-500" }
                     ].map((ch, i) => (
@@ -182,40 +214,51 @@ export default function LandingPage() {
               {/* Step 2 */}
               <div className="flex flex-col md:flex-row-reverse items-center gap-12">
                 <div className="flex-1 text-right md:text-left">
-                  <div className="text-xs font-mono text-blue-500/60 font-medium mb-3">02</div>
-                  <h3 className="text-xl font-bold text-white mb-3 tracking-tight">See your entire portfolio in one view.</h3>
+                  <div className="text-xs font-mono text-red-500/60 font-medium mb-3">02</div>
+                  <h3 className="text-xl font-bold text-white mb-3 tracking-tight">Every channel&apos;s numbers. One screen.</h3>
                   <p className="text-slate-400 text-sm leading-relaxed">
-                    One screen. Every channel. Combined revenue, total views, subscriber growth, watch time — rolled up into a single number and broken down side by side. Know instantly which channel is growing, which is stalling, and which needs you today.
+                    See subscribers, views, RPM, and revenue for all your channels side by side. Know your combined monthly revenue without opening a single YouTube Studio tab. Spot which niche is growing and which is stalling — in seconds.
                   </p>
                 </div>
-                <div className="flex-1 w-full bg-[#0F1319] border border-white/[0.06] rounded-2xl p-6 aspect-[4/3] flex flex-col justify-center gap-6 overflow-hidden shadow-2xl">
-                  <div className="grid grid-cols-2 gap-4">
-                    <div className="bg-white/[0.03] rounded-xl p-4 border border-white/5">
-                      <div className="text-slate-600 text-[10px] font-bold uppercase tracking-widest mb-1">Combined Revenue</div>
-                      <div className="text-white text-2xl font-bold tabular-nums">$4,820</div>
-                      <div className="text-emerald-400 text-[10px] font-bold mt-1.5">+12% vs last month</div>
-                    </div>
-                    <div className="bg-white/[0.03] rounded-xl p-4 border border-white/5">
-                      <div className="text-slate-600 text-[10px] font-bold uppercase tracking-widest mb-1">Total Views</div>
-                      <div className="text-white text-2xl font-bold tabular-nums">2.4M</div>
-                      <div className="text-emerald-400 text-[10px] font-bold mt-1.5">+8%</div>
+                <div className="flex-1 w-full bg-[#1E1E1E] border border-white/[0.06] rounded-2xl p-6 aspect-[4/3] flex flex-col justify-center overflow-hidden shadow-2xl">
+                  {/* Mini YouTube Table */}
+                  <div className="flex justify-between text-slate-600 text-[10px] uppercase tracking-wide pb-2 border-b border-white/[0.05] mb-2 font-bold">
+                    <span>Channel</span>
+                    <div className="flex gap-6">
+                      <span className="w-10 text-right">Subs</span>
+                      <span className="w-10 text-right">Views</span>
+                      <span className="w-12 text-right">Revenue</span>
                     </div>
                   </div>
-                  <div className="space-y-3">
+                  
+                  <div className="space-y-0 text-white">
                     {[
-                      { n: "Channel 1", w: "w-[85%]", c: "bg-blue-500" },
-                      { n: "Channel 2", w: "w-[62%]", c: "bg-violet-500" },
-                      { n: "Channel 3", w: "w-[44%]", c: "bg-emerald-500" },
-                      { n: "Channel 4", w: "w-[31%]", c: "bg-orange-500" }
-                    ].map((b, i) => (
-                      <div key={i} className="flex items-center gap-3">
-                        <div className={`w-2 h-2 rounded-full ${b.c}`} />
-                        <div className="text-white text-[10px] font-medium w-16 truncate">{b.n}</div>
-                        <div className="flex-1 bg-white/[0.06] rounded-full h-1.5 overflow-hidden">
-                          <div className={`${b.c} ${b.w} h-full rounded-full`} />
+                      { n: "Finance Decoded", s: "247K", v: "1.2M", r: "$1,840", c: "bg-red-600" },
+                      { n: "Stoic Daily", s: "89K", v: "430K", r: "$620", c: "bg-slate-500" },
+                      { n: "History Vault", s: "412K", v: "2.1M", r: "$2,190", c: "bg-amber-500" },
+                      { n: "Tech Simplified", s: "34K", v: "98K", r: "$210", c: "bg-red-500/50" }
+                    ].map((row, i) => (row.v !== "" && (
+                      <div key={i} className="flex justify-between items-center py-2.5 border-b border-white/[0.04]">
+                        <div className="flex items-center gap-2">
+                          <div className={`w-5 h-5 rounded-md ${row.c}`} />
+                          <span className="text-white text-xs font-medium truncate w-[80px] md:w-auto">{row.n}</span>
+                        </div>
+                        <div className="flex gap-6">
+                          <span className="w-10 text-right text-slate-300 text-xs font-mono tabular-nums">{row.s}</span>
+                          <span className="w-10 text-right text-slate-300 text-xs font-mono tabular-nums">{row.v}</span>
+                          <span className="w-12 text-right text-emerald-400 text-xs font-mono tabular-nums font-medium">{row.r}</span>
                         </div>
                       </div>
-                    ))}
+                    )))}
+                  </div>
+                  
+                  <div className="flex justify-between items-center pt-3 mt-1">
+                    <span className="text-slate-500 text-[10px] uppercase tracking-wide font-bold">Combined</span>
+                    <div className="flex gap-6">
+                      <span className="w-10 text-right text-white text-xs font-bold font-mono">782K</span>
+                      <span className="w-10 text-right text-white text-xs font-bold font-mono">3.8M</span>
+                      <span className="w-12 text-right text-emerald-400 text-xs font-bold font-mono">$4,860</span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -223,17 +266,17 @@ export default function LandingPage() {
               {/* Step 3 */}
               <div className="flex flex-col md:flex-row items-center gap-12">
                 <div className="flex-1">
-                  <div className="text-xs font-mono text-blue-500/60 font-medium mb-3">03</div>
-                  <h3 className="text-xl font-bold text-white mb-3 tracking-tight">Get told exactly what to do next.</h3>
+                  <div className="text-xs font-mono text-red-500/60 font-medium mb-3">03</div>
+                  <h3 className="text-xl font-bold text-white mb-3 tracking-tight">Find out which channel to work on — and what video to make.</h3>
                   <p className="text-slate-400 text-sm leading-relaxed">
-                    ChannelOS doesn&apos;t just show you data — it reads your data and generates a prioritized action. This week: which channel needs attention, what&apos;s actually causing the drop, and what type of video to make next based on what has worked. Stop guessing. Start acting.
+                    ChannelOS reads your channel data and produces one clear action: which channel needs your attention this week, what is actually causing a drop in views or subs, and what video format has historically performed best on that channel. Data tells you. You execute.
                   </p>
                 </div>
-                <div className="flex-1 w-full bg-[#0F1319] border border-white/[0.06] rounded-2xl p-6 aspect-[4/3] flex items-center justify-center overflow-hidden shadow-2xl">
-                  <div className="bg-blue-600/10 border border-blue-500/20 rounded-xl p-5 w-full max-w-[320px] shadow-2xl">
+                <div className="flex-1 w-full bg-[#1E1E1E] border border-white/[0.06] rounded-2xl p-6 aspect-[4/3] flex items-center justify-center overflow-hidden shadow-2xl">
+                  <div className="bg-red-600/10 border border-red-500/20 rounded-xl p-5 w-full max-w-[320px] shadow-2xl">
                     <div className="flex items-center gap-2 mb-4">
-                      <div className="w-4 h-4 rounded-full bg-blue-500 flex items-center justify-center text-[10px]">⚡</div>
-                      <span className="text-blue-400 text-[10px] font-bold uppercase tracking-widest">Priority Insight</span>
+                      <div className="w-4 h-4 rounded-full bg-red-600 flex items-center justify-center text-[10px]">⚡</div>
+                      <span className="text-red-400 text-[10px] font-bold uppercase tracking-widest">Priority Insight</span>
                     </div>
                     <div className="text-white font-bold text-sm mb-4 leading-tight">Finance Decoded needs attention.</div>
                     <div className="space-y-4">
@@ -243,7 +286,7 @@ export default function LandingPage() {
                         "Revert to 'High-Contrast' thumbnail layout."
                       ].map((f, i) => (
                         <div key={i} className="flex items-start gap-2.5">
-                          <span className="text-blue-400 text-xs">→</span>
+                          <span className="text-red-400 text-xs">→</span>
                           <p className="text-slate-300 text-[11px] leading-snug">{f}</p>
                         </div>
                       ))}
@@ -256,13 +299,13 @@ export default function LandingPage() {
         </section>
 
         {/* SECTION D — SOCIAL PROOF */}
-        <section className="bg-[#0F1319] border-y border-white/5 px-6 py-[100px]">
+        <section className="bg-[#1E1E1E] border-y border-white/5 px-6 py-[100px]">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-16">
-              <div className="text-xs font-semibold tracking-widest uppercase text-blue-500 mb-4">Operator research</div>
-              <h2 className="text-3xl font-bold text-white mb-4">We spent 3 months reading every complaint before writing one line of code.</h2>
+              <div className="text-xs font-semibold tracking-widest uppercase text-red-500 mb-4">Operator research</div>
+              <h2 className="text-3xl font-bold text-white mb-4">Real words from real YouTube channel operators.</h2>
               <p className="text-slate-400 text-sm max-w-xl mx-auto">
-                166 Reddit threads. 5 years of the same problem. Operators building Notion templates just to manage 4 channels. Here is what they said.
+                We read 166 threads from multi-channel YouTube operators across Reddit before writing one line of code. This is the problem they described.
               </p>
             </div>
           
@@ -272,10 +315,10 @@ export default function LandingPage() {
                 { q: "I built a whole Airtable system to track 4 channels. I haven't updated it in a month. It's completely useless now.", a: "YouTube portfolio operator · r/Notion" },
                 { q: "YouTube Studio tells me what happened. It never tells me what to do next.", a: "Creator · r/indiehackers" }
               ].map((quote, i) => (
-                <div key={i} className="bg-[#080B11] border border-white/[0.06] rounded-2xl p-7 flex flex-col hover:border-white/[0.12] transition-all">
+                <div key={i} className="bg-[#0F0F0F] border border-white/[0.06] rounded-2xl p-7 flex flex-col hover:border-white/[0.12] transition-all">
                   <div className="flex items-center gap-1 mb-6">
                     {[...Array(5)].map((_, j) => (
-                      <div key={j} className="w-1.5 h-1.5 rounded-full bg-blue-500" />
+                      <div key={j} className="w-1.5 h-1.5 rounded-full bg-red-600" />
                     ))}
                   </div>
                   <p className="text-slate-300 text-sm leading-relaxed italic flex-1 mb-6">
@@ -308,10 +351,10 @@ export default function LandingPage() {
         </section>
 
         {/* SECTION E — PRICING & FAQ */}
-        <section className="bg-[#080B11] px-6 py-[100px]">
+        <section className="bg-[#0F0F0F] px-6 py-[100px]">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-16">
-              <div className="text-xs font-semibold tracking-widest uppercase text-blue-500 mb-4">Founding member pricing</div>
+              <div className="text-xs font-semibold tracking-widest uppercase text-red-500 mb-4">Founding member pricing</div>
               <h2 className="text-3xl font-bold text-white mb-3">Lock in your price today. Keep it forever.</h2>
               <div className="text-slate-400 text-sm mb-10 max-w-xl mx-auto line-clamp-2 md:line-clamp-none">
                 Founding members pay launch pricing permanently. When we raise prices — and we will — your rate does not change. Ever.
@@ -340,12 +383,12 @@ export default function LandingPage() {
                   key={i} 
                   className={`rounded-2xl p-8 border relative flex flex-col ${
                     tier.h 
-                      ? 'bg-blue-600/8 border-blue-500/40 ring-1 ring-blue-500/20' 
-                      : 'bg-[#0F1319] border-white/[0.06] hover:border-white/[0.12]'
+                      ? 'bg-red-600/8 border-red-500/40 ring-1 ring-red-500/20' 
+                      : 'bg-[#1E1E1E] border-white/[0.06] hover:border-white/[0.12]'
                   } transition-all duration-300`}
                 >
                   {tier.h && (
-                    <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-blue-600 text-white text-[10px] font-bold px-5 py-1.5 rounded-full whitespace-nowrap uppercase tracking-widest shadow-xl shadow-blue-500/20">
+                    <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-red-600 text-white text-[10px] font-bold px-5 py-1.5 rounded-full whitespace-nowrap uppercase tracking-widest shadow-xl shadow-red-500/20">
                       {tier.h}
                     </div>
                   )}
@@ -364,8 +407,8 @@ export default function LandingPage() {
                   <ul className="space-y-4 flex-1 mb-10">
                     {tier.f.map((feature, j) => (
                       <li key={j} className="flex items-start gap-3">
-                        <div className="w-4 h-4 rounded-full bg-blue-500/15 flex items-center justify-center flex-shrink-0 mt-0.5">
-                          <span className="text-blue-400 text-[9px]">✓</span>
+                        <div className="w-4 h-4 rounded-full bg-red-500/15 flex items-center justify-center flex-shrink-0 mt-0.5">
+                          <span className="text-red-400 text-[9px]">✓</span>
                         </div>
                         <span className="text-slate-400 text-sm leading-tight font-medium">{feature}</span>
                       </li>
@@ -376,7 +419,7 @@ export default function LandingPage() {
                     onClick={scrollToCTA}
                     className={`w-full py-3.5 rounded-xl text-xs font-bold uppercase tracking-widest transition-all ${
                       tier.h 
-                        ? 'bg-blue-600 hover:bg-blue-500 text-white shadow-xl shadow-blue-500/20' 
+                        ? 'bg-red-600 hover:bg-red-500 text-white shadow-xl shadow-red-500/20' 
                         : 'bg-white/[0.06] hover:bg-white/[0.12] text-white'
                     }`}
                   >
@@ -408,29 +451,30 @@ export default function LandingPage() {
         </section>
 
         {/* SECTION F — FINAL CTA */}
-        <section ref={finalCtaRef} className="relative bg-[#0F1319] border-t border-white/5 py-[100px] px-6 overflow-hidden">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full opacity-60 filter blur-[100px] bg-blue-500/10 pointer-events-none" />
+        <section ref={finalCtaRef} className="relative bg-[#1E1E1E] border-t border-white/5 py-[100px] px-6 overflow-hidden">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full opacity-60 filter blur-[100px] bg-red-500/10 pointer-events-none" />
           
           <div className="max-w-2xl mx-auto text-center relative z-10">
-            <div className="text-xs font-semibold tracking-widest uppercase text-blue-500 mb-8">Join the waitlist</div>
+            <div className="text-xs font-semibold tracking-widest uppercase text-red-500 mb-8">Join the waitlist</div>
             <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-6 leading-[1.1] tracking-tighter">
-              Stop guessing which channel needs you today.
+              All your YouTube channels. <br className="hidden md:block" />
+              One place. Finally.
             </h2>
             <p className="text-slate-400 text-base mb-12 max-w-md mx-auto leading-relaxed font-medium">
-              Connect all your YouTube channels. See what&apos;s working. Know what to make next. This is what managing a portfolio should feel like.
+              Connect your channels. See combined views, subs, and revenue. Know which video to make next. ChannelOS is the dashboard YouTube never built for operators.
             </p>
             
             <div className="max-w-sm mx-auto">
               <Suspense fallback={<div className="h-[120px] w-full bg-white/[0.04] border border-white/[0.08] rounded-[10px] animate-pulse" />}>
-                <WaitlistForm />
+                <WaitlistForm customButtonText="Get Early Access to ChannelOS →" />
               </Suspense>
             </div>
             
             <div className="flex justify-center gap-8 flex-wrap mt-10">
               {[
-                { e: "🔒", t: "No password stored" },
-                { e: "⚡", t: "5 minute setup" },
-                { e: "🎯", t: "Cancel anytime" }
+                { e: "📺", t: "Works with all your YouTube channels" },
+                { e: "🔒", t: "Read-only YouTube API access" },
+                { e: "⚡", t: "See your portfolio in 5 minutes" }
               ].map((sig, i) => (
                 <div key={i} className="flex items-center gap-2 text-slate-600 text-[11px] font-bold uppercase tracking-wider">
                   <span>{sig.e}</span>
@@ -446,16 +490,14 @@ export default function LandingPage() {
       <footer className="border-t border-white/[0.05] py-12 px-6">
         <div className="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex items-center">
-            <div className="w-6 h-6 rounded bg-gradient-to-br from-[#3B82F6] to-[#1D4ED8] flex items-center justify-center font-bold text-white text-[10px]">C</div>
+            <div className="w-6 h-6 rounded bg-gradient-to-br from-[#FF0000] to-[#CC0000] flex items-center justify-center font-bold text-white text-[10px]">C</div>
             <span className="text-slate-700 text-xs font-bold ml-2.5 uppercase tracking-widest">ChannelOS</span>
             <span className="text-slate-800 text-xs font-bold mx-3">·</span>
             <span className="text-slate-800 text-[10px] font-bold uppercase tracking-widest">© 2026</span>
           </div>
           
-          <div className="flex items-center gap-4 text-slate-700 text-[10px] font-bold uppercase tracking-widest">
-            <span>Built for YouTube portfolio operators</span>
-            <span className="text-slate-800 text-[14px]">·</span>
-            <span className="text-slate-400">Early access</span>
+          <div className="flex items-center gap-4 text-slate-700 text-[10px] font-bold uppercase tracking-widest text-center md:text-right">
+            <span>The dashboard YouTube never built for multi-channel operators</span>
           </div>
         </div>
       </footer>
